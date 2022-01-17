@@ -12,6 +12,8 @@ This module creates policy, a server profile template, and a UCS domain profile.
 
 See [examples](./examples/) for more details.
 
+This is basically a copy of https://github.com/terraform-cisco-modules/terraform-intersight-policy-bundle with a change to the policy-diskgroup.
+
 ## Requirements
 
 | Name | Version |
