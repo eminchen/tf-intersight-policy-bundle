@@ -13,6 +13,7 @@ variable "vnic_mac_pool" {
 variable "imc_access_pool" {
   type        = string
   description = "moid of IP pool for IMC access"
+  default     = "${var.policy_prefix}-ip-pool"
 }
 
 

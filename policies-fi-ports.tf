@@ -1,4 +1,7 @@
-# the port policy is the parent for port mode and role
+# This builds the FI port policy for a set of 6454 FIs
+#
+# The port policy is the parent for port mode and role
+
 resource "intersight_fabric_port_policy" "fabric_port_policy1" {
   name         = "${var.policy_prefix}-6454-port"
   description  = var.description

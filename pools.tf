@@ -1,3 +1,8 @@
+# This file creates the following pools:
+#    - IP pool for IMC Access
+#    - MAC pool for vNICs
+#    - WWNN, WWPN-A and WWPN-B FC pools
+
 # Create a sequential IP pool for IMC access. Change the from and size to what you would like
 
 resource "intersight_ippool_pool" "ippool_pool1" {
