@@ -20,10 +20,12 @@ resource "intersight_ippool_pool" "ippool_pool1" {
 
 resource "intersight_macpool_pool" "macpool_pool1" {
   name = "${var.policy_prefix}-mac-pool"
+  description = var.description
+  assignment_order = "sequential"
   mac_blocks {
     object_type = "macpool.Block"
     from        = "00:CA:FE:00:00:01"
-    size          = "254"
+    size          = "255"
     }
   organization {
     object_type = "organization.Organization"
