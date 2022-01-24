@@ -37,7 +37,7 @@ resource "intersight_fcpool_pool" "fcpool_pool1" {
   name = "${var.policy_prefix}-wwpn-pool"
   description = var.description
   assignment_order = "sequential"
-  pool_pool_purpose = "WWPN"
+  pool_purpose = "WWPN"
   id_blocks = {
     from        = "20:00:00:CA:FE:0A:00:01"
     to          = "20:00:00:CA:FE:0A:00:FF"
