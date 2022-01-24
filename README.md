@@ -2,6 +2,13 @@
 
 This module creates various pools, policies, a UCS server profile template, and a UCS domain profile. 
 
+This policy bundle creates the following Intersight server pools:
+- IP-pool
+- MAC-pool
+- WWNN-pool
+- WWPN-A-pool
+- WWPN-B-pool
+
 This policy bundle creates the following Intersight server policies:
 - Boot order
 - NTP
@@ -18,7 +25,10 @@ This policy bundle creates the following Intersight server policies:
 - Ethernet Adapter
 - Ethernet QoS
 
-It also creates an IP pool, MAC pool as well as WWNN, WWPN-A and WWPN-B pools.
+This policy bundle creates a single Intersight server template based on the above pools and policies.
+
+This policy bundle creates a single Intersight UCS domain profile based on the above pools and policies.
+
 
 ### Change the following settings to meet your needs
 
