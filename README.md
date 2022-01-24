@@ -2,11 +2,11 @@
 
 Go into pools.tf and edit the pools to match what you would like to have in your environment. Otherwise you will end up with the following pools:
 
-`ip-pool from 1.1.1.101 -- 199`
-`mac-pool from 00:CA:FE:00:00:01 -- 00:CA:FE:00:00:FF`
-`wwnn-pool from 20:00:00:CA:FE:00:00:01 -- 20:00:00:CA:FE:00:00:FF`
-`wwpn-a-pool from 20:00:00:CA:FE:0A:00:01 -- 20:00:00:CA:FE:0A:00:FF`
-`wwpn-b-pool from 20:00:00:CA:FE:0B:00:01 -- 20:00:00:CA:FE:0B:00:FF`
+- ip-pool from 1.1.1.101 -- 199
+- mac-pool from 00:CA:FE:00:00:01 -- 00:CA:FE:00:00:FF
+- wwnn-pool from 20:00:00:CA:FE:00:00:01 -- 20:00:00:CA:FE:00:00:FF
+- wwpn-a-pool from 20:00:00:CA:FE:0A:00:01 -- 20:00:00:CA:FE:0A:00:FF
+- wwpn-b-pool from 20:00:00:CA:FE:0B:00:01 -- 20:00:00:CA:FE:0B:00:FF
 
 
 ### Intersight Policies Module
