@@ -1,3 +1,13 @@
+# This file creates the following policies:
+#    - boot order
+#    - ntp
+#    - network connectivity (dns)
+#    - multicast
+#    - Virtual KVM (enable KVM)
+#    - Virtual Media
+#    - System QoS
+#    - IMC Access
+
 # =============================================================================
 # Boot Precision (boot order) Policy
 # -----------------------------------------------------------------------------
@@ -43,25 +53,25 @@ resource "intersight_boot_precision_policy" "boot_precision1" {
 
 
 # =============================================================================
-# Device Connector Policy
+# Device Connector Policy (optional)
 # -----------------------------------------------------------------------------
-
-resource "intersight_deviceconnector_policy" "dc1" {
-  description     = var.description
-  lockout_enabled = true
-  name            = "${var.policy_prefix}-device-connector"
-  organization {
-    moid        = var.organization
-    object_type = "organization.Organization"
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
-  }
-}
+#
+#resource "intersight_deviceconnector_policy" "dc1" {
+#  description     = var.description
+#  lockout_enabled = true
+#  name            = "${var.policy_prefix}-device-connector"
+#  organization {
+#    moid        = var.organization
+#    object_type = "organization.Organization"
+#  }
+#  dynamic "tags" {
+#    for_each = var.tags
+#    content {
+#      key   = tags.value.key
+#      value = tags.value.value
+#    }
+#  }
+#}
 
 
 # =============================================================================
@@ -98,25 +108,25 @@ resource "intersight_ntp_policy" "ntp1" {
 
 
 # =============================================================================
-# IPMI over LAN
+# IPMI over LAN (optional)
 # -----------------------------------------------------------------------------
-
-resource "intersight_ipmioverlan_policy" "ipmi2" {
-  description = var.description
-  enabled     = false
-  name        = "${var.policy_prefix}-ipmi-disabled"
-  organization {
-    moid        = var.organization
-    object_type = "organization.Organization"
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
-  }
-}
+#
+#resource "intersight_ipmioverlan_policy" "ipmi2" {
+#  description = var.description
+#  enabled     = false
+#  name        = "${var.policy_prefix}-ipmi-disabled"
+#  organization {
+#    moid        = var.organization
+#    object_type = "organization.Organization"
+#  }
+#  dynamic "tags" {
+#    for_each = var.tags
+#    content {
+#      key   = tags.value.key
+#      value = tags.value.value
+#    }
+#  }
+#}
 
 
 # =============================================================================
@@ -184,7 +194,7 @@ resource "intersight_fabric_multicast_policy" "fabric_multicast_policy1" {
 
 
 # =============================================================================
-# KVM Policy
+# Virtual KVM Policy
 # -----------------------------------------------------------------------------
 
 resource "intersight_kvm_policy" "kvmpolicy1" {
@@ -299,6 +309,10 @@ resource "intersight_fabric_system_qos_policy" "qos1" {
   }
 }
 
+# =============================================================================
+# IMC Access
+# -----------------------------------------------------------------------------
+
 resource "intersight_access_policy" "access1" {
   name        = "${var.policy_prefix}-imc-access"
   description = var.description
@@ -321,25 +335,25 @@ resource "intersight_access_policy" "access1" {
 }
 
 # =============================================================================
-# Serial Over LAN
+# Serial Over LAN (optional)
 # -----------------------------------------------------------------------------
-
-resource "intersight_sol_policy" "sol1" {
-  name        = "${var.policy_prefix}-sol-off"
-  description = var.description
-  enabled     = false
-  baud_rate   = 9600
-  com_port    = "com1"
-  ssh_port    = 1096
-  organization {
-    moid        = var.organization
-    object_type = "organization.Organization"
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
-  }
-}
+#
+#resource "intersight_sol_policy" "sol1" {
+#  name        = "${var.policy_prefix}-sol-off"
+#  description = var.description
+#  enabled     = false
+#  baud_rate   = 9600
+#  com_port    = "com1"
+#  ssh_port    = 1096
+#  organization {
+#    moid        = var.organization
+#    object_type = "organization.Organization"
+#  }
+#  dynamic "tags" {
+#    for_each = var.tags
+#    content {
+#      key   = tags.value.key
+#      value = tags.value.value
+#    }
+#  }
+#}
