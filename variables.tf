@@ -10,10 +10,10 @@ variable "vnic_mac_pool" {
   type        = string
   description = "moid of MAC pool for use with vnics"
 }
-variable "imc_access_pool" {
-  type        = string
-  description = "moid of IP pool for IMC access"
-}
+#variable "imc_access_pool" {
+#  type        = string
+#  description = "moid of IP pool for IMC access"
+#}
 
 
 # =============================================================================
