@@ -108,10 +108,10 @@ resource "intersight_server_profile_template" "template1" {
     moid        = intersight_boot_precision_policy.boot_precision1.moid
     object_type = "boot.PrecisionPolicy"
   }
-  policy_bucket {
-    moid = intersight_ipmioverlan_policy.ipmi2.moid
-    object_type = "ipmioverlan.Policy"
-  }
+#  policy_bucket {
+#    moid = intersight_ipmioverlan_policy.ipmi2.moid
+#    object_type = "ipmioverlan.Policy"
+#  }
   policy_bucket {
     moid = intersight_kvm_policy.kvmpolicy1.moid
     object_type = "kvm.Policy"
@@ -128,10 +128,10 @@ resource "intersight_server_profile_template" "template1" {
 #    moid = intersight_iam_end_point_user_policy.user_policy1.moid
 #    object_type = "iam.EndPointUserPolicy"
 #  }
-  policy_bucket {
-    moid = intersight_sol_policy.sol1.moid
-    object_type = "sol.Policy"
-  }
+#  policy_bucket {
+#    moid = intersight_sol_policy.sol1.moid
+#    object_type = "sol.Policy"
+#  }
   policy_bucket {
     moid = intersight_vnic_lan_connectivity_policy.vnic_lan1.moid
     object_type = "vnic.LanConnectivityPolicy"

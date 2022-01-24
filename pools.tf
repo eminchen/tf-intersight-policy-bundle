@@ -1,3 +1,5 @@
+# Create a sequential IP pool for IMC access. Change the from and size to what you would like
+
 resource "intersight_ippool_pool" "ippool_pool1" {
   name = "${var.policy_prefix}-ip-pool"
   description = var.description
@@ -18,6 +20,8 @@ resource "intersight_ippool_pool" "ippool_pool1" {
       }
 }
 
+# Create a sequential MAC pool for vNICs. Change the from and size to what you would like
+
 resource "intersight_macpool_pool" "macpool_pool1" {
   name = "${var.policy_prefix}-mac-pool"
   description = var.description
@@ -32,6 +36,10 @@ resource "intersight_macpool_pool" "macpool_pool1" {
     moid = var.organization 
     }
 }
+
+# Create a sequential WWNN and two WWPN (A and B fabirc) pool for vHBAs. Change the from and size to what you would like
+#
+# Comment out from here down to the end of the file if you do not want WWNN, WWPN-A and WWPN-B pools created
 
 resource "intersight_fcpool_pool" "fcpool_pool0" {
   name = "${var.policy_prefix}-wwnn-pool"
@@ -76,6 +84,7 @@ resource "intersight_fcpool_pool" "fcpool_pool1" {
     }
   }
 }
+
 resource "intersight_fcpool_pool" "fcpool_pool2" {
   name = "${var.policy_prefix}-wwpn-b-pool"
   description = var.description
