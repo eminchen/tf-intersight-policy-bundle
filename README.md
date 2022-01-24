@@ -1,3 +1,7 @@
+# Change the following settings to meet your needs
+
+Go into pools.tf and edit the pools to match what you would like to create.
+
 # Create Intersight Policies Module
 
 This module simplifies the creation of basic server and domain policies in the specified Intersight organization. It takes a few inputs and creates more than 20 policies with common settings. It also creates a server profile template and UCS domain profile that use several of those policies. Objects are created with a consistent naming scheme and any tags specified.
@@ -5,14 +9,9 @@ This module simplifies the creation of basic server and domain policies in the s
 This module is intended to give users a jump-start into creating their own policies but will not represent the exact policy that every user will want. The policies can be updated manually or just used a reference to create new policies.
 
 ### Caution
-This module creates policy, a server profile template, and a UCS domain profile. When attempting a `terraform destroy`, Terraform is unable to remove the policies that are used by two Fabric Interconnects in the UCS domain profile. You will have to edit the domain profile manually and detatch the following policies from from the fabric interconnects:
-- VLAN policy
-- VSAN policy
-- Port policy
+This module creates policy, a server profile template, and a UCS domain profile. When attempting a `terraform destroy`, Terraform is unable to remove the policies that are used by two Fabric Interconnects in the UCS domain profile. You will have to delete the domain profile manually and possibly any server profiles that are using any of the profiles or policies created here/
 
-See [examples](./examples/) for more details.
-
-This is basically a copy of https://github.com/terraform-cisco-modules/terraform-intersight-policy-bundle with a change to the policy-diskgroup.
+This is basically a copy of https://github.com/terraform-cisco-modules/terraform-intersight-policy-bundle with a removal of the policy-diskgroup and addition of the pool creation.
 
 ## Requirements
 
