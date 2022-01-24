@@ -27,6 +27,7 @@ resource "intersight_macpool_pool" "macpool_pool1" {
     }
   organization {
     object_type = "organization.Organization"
-    moid = var.organization }
+    moid = var.organization 
+    }
 }
  
