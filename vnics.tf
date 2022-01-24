@@ -113,7 +113,8 @@ resource "intersight_vnic_eth_if" "eth0" {
   failover_enabled = false
   mac_address_type = "POOL"
   mac_pool {
-    moid = var.vnic_mac_pool
+    #moid = var.vnic_mac_pool
+    moid = intersight_macpool_pool.macpool_pool1.moid
   }
   placement {
     id        = ""
