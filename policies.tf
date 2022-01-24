@@ -319,7 +319,8 @@ resource "intersight_access_policy" "access1" {
   inband_vlan = var.imc_access_vlan
   inband_ip_pool {
     object_type = "ippool.Pool"
-    moid        = var.imc_access_pool
+    #moid        = var.imc_access_pool
+    moid        = intersight_ippool_pool.ippool_pool1.moid
   }
   organization {
     moid        = var.organization
