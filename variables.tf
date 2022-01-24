@@ -6,10 +6,10 @@ variable "organization" {
   type        = string
   description = "moid for organization in which to create the policies"
 }
-variable "vnic_mac_pool" {
-  type        = string
-  description = "moid of MAC pool for use with vnics"
-}
+#variable "vnic_mac_pool" {
+#  type        = string
+#  description = "moid of MAC pool for use with vnics"
+#}
 #variable "imc_access_pool" {
 #  type        = string
 #  description = "moid of IP pool for IMC access"
