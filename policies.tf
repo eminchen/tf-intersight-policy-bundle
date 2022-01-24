@@ -319,9 +319,9 @@ resource "intersight_access_policy" "access1" {
   inband_vlan = var.imc_access_vlan
   inband_ip_pool {
     object_type = "ippool.Pool"
-    #Depending if you want to hard code the IMC IP Pool
-    moid        = var.imc_access_pool
-    #moid        = intersight_ippool_pool.ippool_pool1.moid
+    #Pick one of the 2 next lines depending if you want to hard code the IMC IP Pool
+    #moid        = var.imc_access_pool
+    moid        = intersight_ippool_pool.ippool_pool1.moid
   }
   organization {
     moid        = var.organization
