@@ -8,7 +8,6 @@ resource "intersight_ippool_pool" "ippool_pool1" {
   }
 
   ip_v4_config {
-    moid = var.ippool_ip_v4_config
     object_type = "ippool.IpV4Config"
     gateway = "1.1.1.1"
     netmask = "255.255.255.0"
