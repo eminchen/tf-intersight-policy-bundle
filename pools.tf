@@ -40,7 +40,7 @@ resource "intersight_fcpool_pool" "fcpool_pool1" {
   id_blocks = [{
     object_type = "fcpool.Block"
     from        = "20:00:00:CA:FE:00:00:01"
-    size          = "255"
+    to          = "20:00:00:CA:FE:00:00:FF"
     }]
   pool_pool_purpose = "wwpn"
   organization {
