@@ -40,12 +40,18 @@ resource "intersight_fcpool_pool" "fcpool_pool1" {
   pool_purpose = "WWPN"
   id_blocks {
     from        = "20:00:00:CA:FE:0A:00:01"
-    size        =  256
-  #  to          = "20:00:00:CA:FE:0A:00:FF"
+    size        =  255
     }
   organization {
     object_type = "organization.Organization"
     moid = var.organization 
     }
+  dynamic "tags" {
+    for_each = var.tags
+    content {
+      key   = tags.value.key
+      value = tags.value.value
+    }
+  }
 }
  
