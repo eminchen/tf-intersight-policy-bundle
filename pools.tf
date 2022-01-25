@@ -33,7 +33,7 @@ resource "intersight_macpool_pool" "macpool_pool1" {
   assignment_order = "sequential"
   mac_blocks {
     object_type = "macpool.Block"
-    from        = "00:CA:FE:00:00:01"
+    from        = var.mac-block
     size          = "255"
     }
   organization {
@@ -75,7 +75,7 @@ resource "intersight_fcpool_pool" "fcpool_pool1" {
   assignment_order = "sequential"
   pool_purpose = "WWPN"
   id_blocks {
-    from        = "20:00:00:CA:FE:0A:00:01"
+    from        = var.wwpn-a-block
     size        =  255
     }
   organization {
@@ -97,7 +97,7 @@ resource "intersight_fcpool_pool" "fcpool_pool2" {
   assignment_order = "sequential"
   pool_purpose = "WWPN"
   id_blocks {
-    from        = "20:00:00:CA:FE:0B:00:01"
+    from        = var.wwpn-b-block
     size        =  255
     }
   organization {

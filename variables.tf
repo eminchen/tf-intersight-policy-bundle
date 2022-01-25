@@ -15,12 +15,29 @@ variable "organization" {
 #  description = "moid of IP pool for IMC access"
 #}
 
+variable "mac-block" {
+  type         = string
+  description  = "beginning MAC block of size 255"
+  default      = "00:CA:FE:00:00:01"
+}
+
 variable "wwnn-block" {
   type         = string
   description  = "beginning WWNN block of size 255"
-  default      = "20:00:00:CA:FF:00:00:01"
+  default      = "20:00:00:CA:FE:00:00:01"
 }
 
+variable "wwpn-a-block" {
+  type         = string
+  description  = "beginning WWPN-A block of size 255"
+  default      = "20:00:00:CA:FE:0A:00:01"
+}
+
+variable "wwpn-b-block" {
+  type         = string
+  description  = "beginning WWPN-B block of size 255"
+  default      = "20:00:00:CA:FE:0B:00:01"
+}
 
 # =============================================================================
 # Naming and tagging
