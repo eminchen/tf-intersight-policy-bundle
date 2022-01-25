@@ -112,6 +112,7 @@ resource "intersight_vnic_eth_if" "eth0" {
   order            = 0
   failover_enabled = false
   mac_address_type = "POOL"
+  depends_on       = [intersight_macpool_pool.macpool_pool1]
   mac_pool {
     #moid = var.vnic_mac_pool
     moid = intersight_macpool_pool.macpool_pool1.moid
@@ -165,6 +166,7 @@ resource "intersight_vnic_eth_if" "eth1" {
   order            = 0
   failover_enabled = false
   mac_address_type = "POOL"
+  depends_on       = [intersight_macpool_pool.macpool_pool1]
   mac_pool {
     #moid = var.vnic_mac_pool
     moid = intersight_macpool_pool.macpool_pool1.moid
