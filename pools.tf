@@ -52,7 +52,8 @@ resource "intersight_fcpool_pool" "fcpool_pool0" {
   assignment_order = "sequential"
   pool_purpose = "WWNN"
   id_blocks {
-    from        = "20:00:00:CA:FE:00:00:01"
+    #from        = "20:00:00:CA:FE:00:00:01"
+    from        = var.wwnn-block
     size        =  255
     }
   organization {
