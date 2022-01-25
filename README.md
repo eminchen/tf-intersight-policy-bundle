@@ -32,7 +32,7 @@ This policy bundle creates a single Intersight UCS domain profile based on the a
 
 ### Change the following settings to meet your needs
 
-Go into pools.tf and edit the pools to match what you would like to have in your environment. Otherwise you will end up with the following pools:
+Go into variables.tf and edit the default starting point to match what you would like to have in your environment. Otherwise you will end up with the following defaulted pools:
 
 1. ip-pool from 1.1.1.101 -- 199
 2. mac-pool from 00:CA:FE:00:00:01 -- 00:CA:FE:00:00:FF
