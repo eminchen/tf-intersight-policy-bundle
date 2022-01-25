@@ -18,7 +18,7 @@ variable "organization" {
 variable "wwnn-block" {
   type         = string
   description  = "beginning WWNN block of size 255"
-  default      = ""20:00:00:CA:FF:00:00:01""
+  default      = "20:00:00:CA:FF:00:00:01"
 }
 
 
