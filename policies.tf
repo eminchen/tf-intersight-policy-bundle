@@ -17,22 +17,22 @@ resource "intersight_boot_precision_policy" "boot_precision1" {
   description              = var.description
   configured_boot_mode     = "Uefi"
   enforce_uefi_secure_boot = false
-  boot_devices {
-    enabled     = true
-    name        = "KVM_DVD"
-    object_type = "boot.VirtualMedia"
-    additional_properties = jsonencode({
-      Subtype = "kvm-mapped-dvd"
-    })
-  }
-  boot_devices {
-    enabled     = true
-    name        = "IMC_DVD"
-    object_type = "boot.VirtualMedia"
-    additional_properties = jsonencode({
-      Subtype = "cimc-mapped-dvd"
-    })
-  }
+#  boot_devices {
+#    enabled     = true
+#    name        = "KVM_DVD"
+#    object_type = "boot.VirtualMedia"
+#    additional_properties = jsonencode({
+#      Subtype = "kvm-mapped-dvd"
+#    })
+#  }
+#  boot_devices {
+#    enabled     = true
+#    name        = "IMC_DVD"
+#    object_type = "boot.VirtualMedia"
+#    additional_properties = jsonencode({
+#      Subtype = "cimc-mapped-dvd"
+#    })
+#  }
   boot_devices {
     enabled     = true
     name        = "LocalDisk"
@@ -221,7 +221,7 @@ resource "intersight_kvm_policy" "kvmpolicy1" {
 # =============================================================================
 # Virtual Media Policy
 # -----------------------------------------------------------------------------
-
+/**
 resource "intersight_vmedia_policy" "vmedia1" {
   name          = "${var.policy_prefix}-vmedia-ubuntu"
   description   = var.description
@@ -258,12 +258,13 @@ resource "intersight_vmedia_policy" "vmedia1" {
     }
   }
 }
-
+**/
+/**
 resource "intersight_vmedia_policy" "vmedia2" {
   name          = "${var.policy_prefix}-vmedia-enabled"
   description   = var.description
   enabled       = true
-  encryption    = false
+  encryption    = true
   low_power_usb = true
   organization {
     moid        = var.organization
@@ -277,6 +278,7 @@ resource "intersight_vmedia_policy" "vmedia2" {
     }
   }
 }
+**/
 
 # =============================================================================
 # System Qos Policy
