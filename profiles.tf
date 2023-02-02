@@ -116,10 +116,10 @@ resource "intersight_server_profile_template" "template1" {
     moid = intersight_kvm_policy.kvmpolicy1.moid
     object_type = "kvm.Policy"
   }
-#  policy_bucket {
-#    moid = intersight_vmedia_policy.vmedia2.moid
-#    object_type = "vmedia.Policy"
-#  }
+  policy_bucket {
+    moid = intersight_vmedia_policy.vmedia2.moid
+    object_type = "vmedia.Policy"
+  }
   policy_bucket {
     moid = intersight_access_policy.access1.moid
     object_type = "access.Policy"
@@ -135,5 +135,9 @@ resource "intersight_server_profile_template" "template1" {
   policy_bucket {
     moid = intersight_vnic_lan_connectivity_policy.vnic_lan1.moid
     object_type = "vnic.LanConnectivityPolicy"
+  }
+    policy_bucket {
+    moid = intersight_vnic_san_connectivity_policy.vnic_san_con_1.moid
+    object_type = "vnic.SanConnectivityPolicy"
   }
 }

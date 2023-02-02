@@ -87,6 +87,16 @@ variable "vnic_native_vlan" {
   default     = 1
 }
 
+variable "san_id_a" {
+  type        = number
+  description = "SAN ID for fabric A"
+  default     = 100
+}
+variable "san_id_b" {
+  type        = number
+  description = "SAN ID for fabric B"
+  default     = 200
+}
 
 # =============================================================================
 # IMC
